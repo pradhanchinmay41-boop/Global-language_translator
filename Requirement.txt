@@ -1,4 +1,0 @@
-streamlit==1.28.1
-mtranslate==1.2.1
-pandas==2.0.3
-gtts==2.4.0
