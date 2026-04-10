@@ -1,6 +1,6 @@
 import streamlit as st
 # from mtranslate import translate
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 
 
 import pandas as pd
@@ -12,7 +12,6 @@ import time
 import requests
 from io import BytesIO
 
-translator = Translator()
 
 
 # ✅ FIXED: Removed theme="auto" parameter
@@ -321,7 +320,7 @@ if inputtext.strip():
     progress_bar.progress(70)
     
     try:
-        output = translator.translate(inputtext, dest=lang_array[choice]).text
+        output = GoogleTranslator(source='auto', target=lang_array[choice]).translate(inputtext)
         progress_bar.progress(100)
         status_text.text('✅ Translation complete!')
         time.sleep(0.5)
